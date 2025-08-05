@@ -12,7 +12,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { toast, Toaster } from 'react-hot-toast';
 import { ArrowLeft, Calendar as CalendarIcon, DollarSign, Users } from 'lucide-react';
 import { format } from 'date-fns';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const EventCustomizer = ({ onBack }) => {
     const [serviceCategories, setServiceCategories] = useState({});
