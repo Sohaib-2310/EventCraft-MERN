@@ -51,20 +51,4 @@ router.delete('/:id', auth, async (req, res) => {
     }
 });
 
-// router.post('/', async (req, res) => {
-//     try {
-//         const { name, email, phone, subject, message } = req.body;
-//         console.log("📩 New form submission:", req.body);
-
-//         const newContact = new Contact({ name, email, phone, subject, message });
-//         await newContact.save();
-//         console.log("✅ Contact saved to DB");
-
-//         res.status(200).json({ success: true, message: 'Form submitted and saved!' });
-//     } catch (error) {
-//         console.error('❌ Error saving contact:', error);
-//         res.status(500).json({ success: false, message: 'Server error' });
-//     }
-// });
-
 module.exports = router;

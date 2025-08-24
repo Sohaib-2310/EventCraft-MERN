@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const ServiceCategory = require("../models/serviceCategory");
 
-// -------------------------
-// ✅ Get all categories
-// -------------------------
+// Get all categories
 router.get("/", async (req, res) => {
     try {
         const categories = await ServiceCategory.find();
@@ -14,9 +12,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// -------------------------
-// ✅ Create a new category
-// -------------------------
+// Create a new category
 router.post("/", async (req, res) => {
     try {
         const { name, options } = req.body;
@@ -29,9 +25,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// -------------------------
-// ✅ Update category name
-// -------------------------
+// Update category name
 router.put("/:id", async (req, res) => {
     try {
         const updatedCategory = await ServiceCategory.findByIdAndUpdate(
@@ -46,9 +40,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-// -------------------------
-// ✅ Delete a category
-// -------------------------
+// Delete a category
 router.delete("/:id", async (req, res) => {
     try {
         const deletedCategory = await ServiceCategory.findByIdAndDelete(req.params.id);
@@ -59,9 +51,7 @@ router.delete("/:id", async (req, res) => {
     }
 });
 
-// -------------------------
-// ✅ Add new service option to category
-// -------------------------
+// Add new service option to category
 router.post("/:id/options", async (req, res) => {
     try {
         const category = await ServiceCategory.findById(req.params.id);
@@ -75,9 +65,7 @@ router.post("/:id/options", async (req, res) => {
     }
 });
 
-// -------------------------
-// ✅ Update a service option
-// -------------------------
+// Update a service option
 router.put("/:categoryId/options/:optionId", async (req, res) => {
     try {
         const category = await ServiceCategory.findById(req.params.categoryId);
@@ -98,9 +86,7 @@ router.put("/:categoryId/options/:optionId", async (req, res) => {
     }
 });
 
-// -------------------------
-// ✅ Delete a service option
-// -------------------------
+// Delete a service option
 router.delete("/:categoryId/options/:optionId", async (req, res) => {
     try {
         const category = await ServiceCategory.findById(req.params.categoryId);

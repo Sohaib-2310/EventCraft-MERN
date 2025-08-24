@@ -73,20 +73,4 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-// router.post('/', async (req, res) => {
-//   try {
-//     const { name, email, phone, eventType, date, message } = req.body;
-//     console.log("📅 New booking request:", req.body);
-
-//     const newBooking = new Booking({ name, email, phone, eventType, date, message });
-//     await newBooking.save();
-//     console.log("✅ Booking saved to DB");
-
-//     res.status(200).json({ success: true, message: 'Booking request submitted!' });
-//   } catch (error) {
-//     console.error('❌ Error saving booking:', error);
-//     res.status(500).json({ success: false, message: 'Server error' });
-//   }
-// });
-
 module.exports = router;
